@@ -34,7 +34,8 @@ public class Startup
         services.AddDbContext<ApplicationDbContext>(options =>
         {
             // Configure the context to use Microsoft SQL Server.
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            // options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            options.UseSqlite($"Filename={Path.Combine(Path.GetTempPath(), "openiddict-aspnetcore.sqlite3")}");
 
             // Register the entity sets needed by OpenIddict.
             // Note: use the generic overload if you need
@@ -108,7 +109,8 @@ public class Startup
         // Register the Quartz.NET service and configure it to block shutdown until jobs are complete.
         services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
 
-        services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        services
+            .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddOpenIdConnect("KeyCloak", "KeyCloak", options =>
             {
                 options.SignInScheme = "Identity.External";
@@ -137,7 +139,8 @@ public class Startup
                 };
             });
 
-        services.AddOpenIddict()
+        services
+            .AddOpenIddict()
             .AddCore(options =>
             {
                 options.UseEntityFrameworkCore()

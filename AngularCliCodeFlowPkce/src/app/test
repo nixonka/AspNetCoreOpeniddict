@@ -1,0 +1,21 @@
+https://localhost:4200/?
+code=tcl6g0F1DyAok49Ewx4ZfwdEYIIVg16gddIcYXSInuo&
+state=52aea58251ad4babc9c4259ba366d602f617O6DI3&
+iss=https%3A%2F%2Flocalhost%3A44395%2F
+
+/connect/authorize?client_id=angularclient&
+redirect_uri=https://localhost:4200&response_type=code&
+scope=openid profile email dataEventRecords offline_access&
+nonce=be6a579d663f65b397229f0dbb23e07c5aokh2mcQ&state=20be91885ed1d6ba89c6a6782f419428fePly7Apm&
+code_challenge=rBP55pPm4lAkVB07mD0gcm36Yd9oLWQxfoU3Je1n3wg&code_challenge_method=S256
+
+
+https://localhost:44395/Identity/Account/Login?
+ReturnUrl=%2Fconnect%2Fauthorize%3Fclient_id %3D angularclient
+%26 redirect_uri %3D https%253A%252F%252Flocalhost%253A4200
+%26 response_type %3D code
+%26 scope %3D openid%2520profile%2520email%2520dataEventRecords%2520offline_access
+%26 nonce %3D 58d44e4b4fe6f39665d17d7070c16c5d947QUebib
+%26 state %3D dae0e42fa0e776458c0e9897b0a2fa1050Mxz4Ygx
+%26 code_challenge %3D p4gMQFv2L6vu3-mf131AyL84AqDQfkQMhUPEsAoaCeo
+%26 code_challenge_method %3D S256
